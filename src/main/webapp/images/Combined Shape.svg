@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="70px" height="86px" viewBox="0 0 70 86" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>Combined Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M643.395823,54.8655772 C642.304673,55.1192764 641.167924,55.2533706 640,55.2533706 C631.715729,55.2533706 625,48.5067042 625,40.1842695 C625,36.3849172 626.399624,32.9139705 628.709154,30.2634052 C619.650437,32.5290043 610,37.7746385 610,30.1382021 C610,13.4933327 623.431458,0 640,0 C656.568542,0 670,13.4933327 670,30.1382021 C670,46.7830716 604.475816,112.360574 640,60.2764043 C641.307829,58.3589171 642.43571,56.5580563 643.395823,54.8655772 Z M643.395823,54.8655772 C650.044372,53.3197483 655,47.3333995 655,40.1842695 C655,31.8618348 648.284271,25.1151685 640,25.1151685 C635.497659,25.1151685 631.45862,27.1079396 628.709154,30.2634052 C632.490979,29.3175648 636.169674,28.8911112 639,30.1382021 C647.598136,33.9266909 651.55512,40.4824429 643.395823,54.8655772 Z" id="path-1"></path>
+        <filter x="-12.5%" y="-6.9%" width="125.0%" height="118.7%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="0.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <filter x="-10.8%" y="-5.6%" width="121.7%" height="116.2%" filterUnits="objectBoundingBox" id="filter-3">
+            <feGaussianBlur stdDeviation="1.5" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+            <feOffset dx="0" dy="1" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Welcome-Screen" transform="translate(-605.000000, 0.000000)">
+            <g id="Combined-Shape">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#000000" fill-rule="evenodd" xlink:href="#path-1"></use>
+                <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-1"></use>
+                <use stroke="#979797" stroke-width="1" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>
