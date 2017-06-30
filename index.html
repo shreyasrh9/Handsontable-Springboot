@@ -6,6 +6,49 @@ title: Home
 <div class="img">
     <img src="http://res.cloudinary.com/shreyas/image/upload/v1447835724/_20150603_122529_a3k9rn.jpg" />
 </div>
+<p><ul>
+  <li>In this example we will see how to handle a requirement where a user wants to upload a huge excel sheet data and validate the data in our controller.</li>
+  <li>Each row will be validated.</li>
+  <li>As you can see the first column header says message where any error messages will be displayed in that column.</li>
+  <li>If you want to submit a huge data, there are chances where a variable which is binded can be null in the controller as there are some limitations on the size of data that is being submitted. So what do we do now???</li>
+  <li>We will compress the data in JSP and decompress in the controller.</li>
+  <li>We will use lz-string to compress and decompress.</li>
+  <li>Add lz-string js to your JSP <code>&lt;script language="javascript" src="lz-string.js"&gt;&lt;/script&gt;</code> </li>
+  <li>Add the below code to compress the handson table data.<code>
+		var compressed = LZString.compress(hot.getData());<br>
+	</code> </li>
+  <li>Decompress the compressed data in your controller using the below code.
+  		<code>JSPath = Your JS path; <br><br>
+		
+		File fileJS = null;<br>
+		ScriptEngineManager mgr = null;<br>
+		ScriptEngine engine = null;<br>
+		String contentJS = null;<br><br>
+
+		fileJS = new File(JSPath);<br>
+		mgr = new ScriptEngineManager();<br>
+		engine = mgr.getEngineByName("JavaScript");<br>
+		contentJS = FileUtils.readFileToString(fileJS, "UTF-8");<br>
+		engine.eval(contentJS);<br>
+		engine.eval("var decompressedJSON = LZString.decompressFromEncodedURIComponent('" + compressedJSON + "')");<br>
+		System.out.println((String) engine.get("decompressedJSON"));</code></li>
+			<li>10. Now we will remove the rows if they are empty so that we
+				avoid unnecessary loop. <code>
+					Type listType = null;<br> listType = new
+					TypeToken&lt;List&lt;HandsOnTable&gt;&gt;() { }.getType();<br>
+					List&lt;HandsOnTable&gt; bdpmbList = new
+					GsonBuilder().create().fromJson(bulkData, listType); <br>
+					for (int i =0; i < bdpmbList.size(); i++) { <br>
+					if(bdpmbList.get(i).isEmptyBulkData()) { <br>
+					bdpmbList.remove(i); i--; <br>
+					}<br>
+					
+				</code>
+			</li>
+			<li>Now let's validate each rows and set error messages to first column. Enter a non numerical value in any cell and click on upload data</li>
+  
+</ul> </p>
+
 
 
 
