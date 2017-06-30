@@ -3,9 +3,7 @@ layout: default
 title: Home
 ---
 
-<div class="img">
-    <img src="http://res.cloudinary.com/shreyas/image/upload/v1447835724/_20150603_122529_a3k9rn.jpg" />
-</div>
+
 <p><ul>
   <li>In this example we will see how to handle a requirement where a user wants to upload a huge excel sheet data and validate the data in our controller.</li>
   <li>Each row will be validated.</li>
@@ -13,11 +11,11 @@ title: Home
   <li>If you want to submit a huge data, there are chances where a variable which is binded can be null in the controller as there are some limitations on the size of data that is being submitted. So what do we do now???</li>
   <li>We will compress the data in JSP and decompress in the controller.</li>
   <li>We will use lz-string to compress and decompress.</li>
-  <li>Add lz-string js to your JSP <code>&lt;script language="javascript" src="lz-string.js"&gt;&lt;/script&gt;</code> </li>
+  <li>Add lz-string js to your JSP <br><code>&lt;script language="javascript" src="lz-string.js"&gt;&lt;/script&gt;</code> </li>
   <li>Add the below code to compress the handson table data.<code>
 		var compressed = LZString.compress(hot.getData());<br>
 	</code> </li>
-  <li>Decompress the compressed data in your controller using the below code.
+  <li>Decompress the compressed data in your controller using the below code.<br>
   		<code>JSPath = Your JS path; <br><br>
 		
 		File fileJS = null;<br>
@@ -33,7 +31,7 @@ title: Home
 		engine.eval("var decompressedJSON = LZString.decompressFromEncodedURIComponent('" + compressedJSON + "')");<br>
 		System.out.println((String) engine.get("decompressedJSON"));</code></li>
 			<li>10. Now we will remove the rows if they are empty so that we
-				avoid unnecessary loop. <code>
+				avoid unnecessary loop. <br><code>
 					Type listType = null;<br> listType = new
 					TypeToken&lt;List&lt;HandsOnTable&gt;&gt;() { }.getType();<br>
 					List&lt;HandsOnTable&gt; bdpmbList = new
